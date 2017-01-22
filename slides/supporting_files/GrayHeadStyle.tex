@@ -1,0 +1,94 @@
+%============= Format Headings =====================
+
+\definecolor{secshade}{gray}{0.70}
+\definecolor{subsecshade}{gray}{0.80}
+\definecolor{subsubsecshade}{gray}{0.90}
+
+\makeatletter
+  \renewcommand\section[1]{%
+    \vskip 2pt
+    \goodbreak
+    \refstepcounter{section}%
+    \hbox to \hsize{%
+      \advance\hsize by -8pt%
+      \fcolorbox{black}{secshade}{%
+        {\bfseries\normalsize}%
+        \vtop{%
+          \parindent=3pt
+          \leavevmode\raggedright\bfseries\normalsize
+          \MakeUppercase{#1}
+          }%
+        }}\nobreak
+    \vskip 2pt\nobreak    
+    \addcontentsline{toc}{section}{%
+      \protect\numberline{\thesection}%
+      #1}%
+    }
+\makeatother
+
+\makeatletter
+  \renewcommand\subsection[1]{%
+    \vskip 2pt
+    \goodbreak
+    \refstepcounter{subsection}%
+    \hbox to \hsize{%
+      \advance\hsize by -8pt%
+      \colorbox{subsecshade}{%
+        {\bfseries\normalsize}%
+        \vtop{%
+          \parindent=3pt
+          \leavevmode\raggedright\bfseries\normalsize
+          #1
+          }%
+        }}\nobreak
+    \vskip 2pt\nobreak
+    \addcontentsline{toc}{subsection}{%
+      \protect\numberline{\thesubsection}%
+      #1}%
+    }
+\makeatother
+
+\makeatletter
+  \renewcommand\subsubsection[1]{%
+    \vskip 2pt
+    \goodbreak
+    \refstepcounter{subsubsection}%
+    \hbox to \hsize{%
+      \advance\hsize by -8pt%
+      \colorbox{subsubsecshade}{%
+        {\bfseries\normalsize}%
+        \vtop{%
+          \parindent=3pt
+          \leavevmode\raggedright\bfseries\normalsize
+          #1
+          }%
+        }}\nobreak
+    \vskip 2pt\nobreak
+    \addcontentsline{toc}{subsubsection}{%
+      \protect\numberline{\thesubsubsection}%
+      #1}%
+    }
+\makeatother
+
+%REMOVE THE BIBLIOGRAPHY TITLE
+\makeatletter
+\renewenvironment{thebibliography}[1]{%
+%     \section*{\refname}%
+%      \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+      \list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+\makeatother
