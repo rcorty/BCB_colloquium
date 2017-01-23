@@ -1,5 +1,5 @@
 \beamer@endinputifotherversion {3.36pt}
-\beamer@sectionintoc {1}{Background}{3}{0}{1}
-\beamer@sectionintoc {2}{Mean QTL Mapping}{10}{0}{2}
-\beamer@sectionintoc {3}{Variance QTL Mapping}{17}{0}{3}
-\beamer@sectionintoc {4}{Unsolicited Advice}{22}{0}{4}
+\beamer@sectionintoc {2}{Background}{4}{0}{1}
+\beamer@sectionintoc {3}{Mean QTL Mapping}{11}{0}{2}
+\beamer@sectionintoc {4}{Variance QTL Mapping}{18}{0}{3}
+\beamer@sectionintoc {5}{Unsolicited Advice}{23}{0}{4}
